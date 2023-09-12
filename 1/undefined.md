@@ -1,0 +1,279 @@
+# 개발 환경 세팅
+
+
+
+## JavaScript 개발 환경 (Node.js) 셋팅
+
+즉, Node.js 셋팅이라고 볼 수 있다.
+
+계속 업데이트 되는 Node.js 프로젝트를 진행하다 보면 프로젝트마다 서로 다른 버전을 사용하는 경우가 있다.
+
+그래서 여러 버전의 Node.js를 버전 쉽게 설치하고 버전 관리할 수 있는 도구를 이용하면 편리하다.
+
+> NVM(Node Version Manager) -> [FNM(Fast Node Manager)](https://github.com/Schniz/fnm) 추세
+
+{% hint style="success" %}
+**FNM(Fast Node Manager) 장점**\
+
+
+1. cross-platform 지원\
+   \- nvm은 window를 지원하지 않음 (nvm-windows를 사용해야함)
+2. nvm에 비해서 속도가 빠름
+3. 설치와 구성이 nvm보다 쉬움
+{% endhint %}
+
+
+
+#### \[설치 방법]
+
+참고 : [https://github.com/Schniz/fnm](https://github.com/Schniz/fnm)
+
+LTS(Long Term Support) 버전을 설치하고 기본으로 사용하게 한다.
+
+```sh
+$ brew install fnm
+
+$ fnm install --lts
+$ fnm use lts-latest
+
+// Zsh 기준
+$ eval "$(fnm env --use-on-cd)"
+```
+
+
+
+설치된 상태 확인.
+
+```
+$ fnm list                                                                                                    buzz@buzz
+* v18.17.1 default, lts-latest
+* system
+```
+
+```
+$ node -v                                                                                                     buzz@buzz
+v18.17.1
+```
+
+
+
+***
+
+### 프로젝트 초기화
+
+
+
+1. **npm 패키지 설치**
+
+```sh
+npm init -y
+```
+
+```json
+{
+  "name": "my-app", // kebab-case를 주로 사용한다.
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Buzz",
+  "license": "ISC"
+}
+
+```
+
+
+
+2. **.gitignore 작성**
+
+{% hint style="info" %}
+셋팅\
+\
+[https://www.toptal.com/developers/gitignore](https://www.toptal.com/developers/gitignore)
+
+들어가서 Node 검색 후 사용
+{% endhint %}
+
+```bash
+.gitignore
+
+# 2가지가 중요
+/node_module/
+/dist/
+```
+
+
+
+3. **타입스크립트 설정**
+
+```sh
+npm i -D typescript
+```
+
+> **npm i -D 라이브러리**\
+> (= npm install --save-dev 라이브러리)
+
+```sh
+npx tsc --init
+```
+
+tsconfig.json 파일의 jsx 속성 변경
+
+```json
+"jsx" : "preserve" or "react-jsx"
+```
+
+* .tsx 파일을 사용하게 해준다.
+* import React를 하지 않아도 사용할 수 있게 해준다.
+
+
+
+4. **ESLint**
+
+```sh
+npm i -D eslint
+```
+
+다음 명령을 통해 ESLint 설정 파일(`.eslintrc.js`)을 자동으로 생성한다.
+
+```sh
+npx eslint --init
+```
+
+`.eslintrc.js` 파일을 적절히 수정한다. 아직 Jest를 설치하지 않았지만, 여기서 미리 `jest: true`를 잡아주면 좋다.
+
+잊지 않고 `.eslintignore` 파일을 작성한다.
+
+<details>
+
+<summary>.eslintignore</summary>
+
+```ignore
+/node_modules/
+/dist/
+/.parcel-cache/
+```
+
+</details>
+
+
+
+{% hint style="info" %}
+**npx**
+
+npm을 execute 한다라는 뜻.
+
+node\_modules/.bin/ 중 설치된 라이브러리를 실행하라는 뜻!&#x20;
+
+![](<../.gitbook/assets/스크린샷 2023-09-11 오후 9.57.18.png>)
+
+
+
+예)
+
+> **npx tsc -- init**
+>
+> (= ./node\_modules/.bin/tsc -- init)
+
+
+{% endhint %}
+
+
+
+5. **리액트 설치**
+
+```sh
+npm i react react-dom
+
+npm i -D @types/react @types/react-dom
+```
+
+
+
+6. **테스팅 도구 설치**
+
+```sh
+npm i -D jest @types/jest @swc/core @swc/jest \
+    jest-environment-jsdom \
+    @testing-library/react @testing-library/jest-dom
+```
+
+**jest.config.js** 파일을 작성\
+성능을 위해 테스트에서 SWC를 사용할 수 있도록 세팅
+
+<details>
+
+<summary>jest.config.js</summary>
+
+```javascript
+module.exports = {
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  transform: {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            jsx: true,
+            decorators: true,
+          },
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
+          },
+        },
+      },
+    ],
+  },
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
+};
+
+```
+
+</details>
+
+참고 : [https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)
+
+
+
+7. **Parcel 설치**
+
+```sh
+npm i -D parcel
+```
+
+**package.json scripts** 수정
+
+<details>
+
+<summary>package.json scripts</summary>
+
+```json
+  "scripts": {
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
+    "coverage": "jest --coverage --coverage-reporters html",
+    "watch:test": "jest --watchAll"
+  },
+```
+
+</details>
+
+참고 : [https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json)
+
+
+
+
+
+**\[참고 문서]**
+
+* [setup-javascript-project](https://github.com/ahastudio/til/blob/main/javascript/20181212-setup-javascript-project.md)

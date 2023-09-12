@@ -1,2 +1,6 @@
-# Block, weakSelf and strongSelf
-참고 사이트 : https://blog.waterworld.com.hk/post/block-weakself-strongself
+---
+description: '"이 사람의 모든 것을 모방하고, 훔치자"'
+---
+
+# 1주차
+
