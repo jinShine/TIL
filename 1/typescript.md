@@ -280,11 +280,24 @@ person = { name: '홍길동', age: 13, hp: 256, mp: 16 };
 
 
 
-#### Generics, Utility Types, and Tips
+#### Generics, Utility Types
 
 * [Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 * [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
-* [더 좋은 타입스크립트 프로그래머로 만드는 11가지 팁](https://velog.io/@lky5697/11-tips-that-help-you-become-a-better-typescript-programmer)
 
 
+
+{% hint style="info" %}
+**더 알아보기**\
+\
+\
+**공식문서**
+
+* [https://www.typescriptlang.org/docs/handbook/intro.html](https://www.typescriptlang.org/docs/handbook/intro.html)
+
+\
+**더 좋은 타입스크립트 프로그래머로 만드는 11가지 팁**
+
+* [https://velog.io/@lky5697/11-tips-that-help-you-become-a-better-typescript-programmer](https://velog.io/@lky5697/11-tips-that-help-you-become-a-better-typescript-programmer)
+{% endhint %}
 
