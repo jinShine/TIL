@@ -1,13 +1,15 @@
 # React
 
-
-
 {% hint style="info" %}
 **필독**
 
 * [**React 공식문서**](https://ko.reactjs.org/)**,** [**React Beta 문서**](https://beta.reactjs.org/) (권장)
 * [**React 코어 개발자가 쓴 React에 대한 이해를 돕는 글**](https://overreacted.io/ko/react-as-a-ui-runtime/)
 {% endhint %}
+
+사용자 인터페이스를 만들기 위한 JavaScript 라이브러리
+
+React는 컴포넌트를 중심으로 동작한다.&#x20;
 
 
 
@@ -59,8 +61,6 @@ React는 변경된 부분만 업데이트 한다.
 
 * Reconciliation(재조정)
 * diffing algorithm
-
-
 
 
 
