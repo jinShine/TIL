@@ -8,3 +8,5 @@
   * [4. Testing Library](<1 주차/4. testing-library.md>)
   * [5. Parcel & ESLint](<1 주차/5. parcel-and-eslint.md>)
   * [6. 정리](<1 주차/6..md>)
+* [2 주차](2/README.md)
+  * [1. JSX](2/1.-jsx.md)
