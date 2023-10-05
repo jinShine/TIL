@@ -15,3 +15,5 @@
   * [6. 정리](1/6..md)
 * [2 주차](2/README.md)
   * [1. JSX](2/1.-jsx.md)
+* [3 주차](3/README.md)
+  * [1. React Component](3/1.-react-component.md)
