@@ -21,5 +21,5 @@
 * [3 주차](mega/3/README.md)
   * [1. React Component](mega/3/1.-react-component.md)
   * [2. React State](mega/3/2.-react-state.md)
-* [4 주차](mega/4/README.md)
-  * [1. Express](mega/4/1.-express.md)
+* [week 4](mega/week-4/README.md)
+  * [1. Express](mega/week-4/1.-express.md)
