@@ -21,3 +21,4 @@
   * [2.Fetch API & CORS](mega/week-4/2.fetch-api-and-cors.md)
   * [3.React의 Hook](mega/week-4/3.react-hook.md)
   * [4.useRef & Custom Hook](mega/week-4/4.useref-and-custom-hook.md)
+  * [5.usehooks-ts](mega/week-4/5.usehooks-ts.md)
