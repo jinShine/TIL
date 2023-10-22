@@ -18,3 +18,4 @@
   * [2.React State](mega/week-3/2.react-state.md)
 * [week 4](mega/week-4/README.md)
   * [1.Express](mega/week-4/1.express.md)
+  * [2.Fetch API & CORS](mega/week-4/2.fetch-api-and-cors.md)
