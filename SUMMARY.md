@@ -30,3 +30,4 @@
 * [week 6](mega/week-6/README.md)
   * [1.External Store](mega/week-6/1.external-store.md)
   * [2.TSyringe](mega/week-6/2.tsyringe.md)
+  * [3.Redux 따라하기](mega/week-6/3.redux.md)
