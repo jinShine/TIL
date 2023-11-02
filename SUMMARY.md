@@ -27,3 +27,5 @@
   * [2.React Testing Library](mega/week-5/2.react-testing-library.md)
   * [3.MSW](mega/week-5/3.msw.md)
   * [4.Playwright](mega/week-5/4.playwright.md)
+* [week 6](mega/week-6/README.md)
+  * [1.External Store](mega/week-6/1.external-store.md)
