@@ -32,3 +32,4 @@
   * [2.TSyringe](mega/week-6/2.tsyringe.md)
   * [3.Redux 따라하기](mega/week-6/3.redux.md)
   * [4.usestore-ts](mega/week-6/4.usestore-ts.md)
+* [week 7](mega/week-7.md)
