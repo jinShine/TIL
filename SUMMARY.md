@@ -10,7 +10,6 @@
   * [3.React](mega/week-1/3.react.md)
   * [4.Testing Library](mega/week-1/4.testing-library.md)
   * [5.Parcel & ESLint](mega/week-1/5.parcel-and-eslint.md)
-  * [6.정리](mega/week-1/6..md)
 * [week 2](mega/week-2/README.md)
   * [1.JSX](mega/week-2/1.jsx.md)
 * [week 3](mega/week-3/README.md)
@@ -44,3 +43,7 @@
   * [4.styled-components](mega/week-8/4.styled-components.md)
   * [5.props와 attrs](mega/week-8/5.props-attrs.md)
   * [6.Global Style & Theme](mega/week-8/6.global-style-and-theme.md)
+
+***
+
+* [react setting](6..md)
